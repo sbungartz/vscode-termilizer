@@ -1,19 +1,25 @@
 import * as vscode from 'vscode';
 
+const getTextToRun = (editor: vscode.TextEditor) => {
+	if (editor.selection.isEmpty) {
+		const lineIndex = editor.selection.active.line;
+		return editor.document.lineAt(lineIndex).text;
+	} else {
+		return editor.document.getText(editor.selection);
+	}
+};
+
 export function activate(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand('vs-code-slime.helloWorld', () => {
     const editor = vscode.window.activeTextEditor;
 		const terminal = vscode.window.activeTerminal;
 		if (!editor || !terminal) {
-			vscode.window.showInformationMessage("Derp");
+			vscode.window.showInformationMessage("Need to have an active editor and an active terminal");
 			return;
 		}
 
-		const lineIndex = editor.selection.active.line;
-		const lineText = editor.document.lineAt(lineIndex).text;
-		terminal.sendText(lineText);
-
-		vscode.window.showInformationMessage(`Hello: active.line text: '${lineText}'`);
+		const textToRun = getTextToRun(editor);
+		terminal.sendText(textToRun);
 	});
 
 	context.subscriptions.push(disposable);
