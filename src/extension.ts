@@ -17,9 +17,20 @@ const findFirstLineIndexOfBlock = (document: vscode.TextDocument, beforeLineInde
 
 const getBlockToRun = (editor: vscode.TextEditor) => {
 	const cursorLineIndex = editor.selection.active.line;
-	const startLineIndex = findFirstLineIndexOfBlock(editor.document, cursorLineIndex);
+	if (editor.document.lineAt(cursorLineIndex).isEmptyOrWhitespace) {
+		return "";
+	}
 
-	return "";
+	const startLineIndex = findFirstLineIndexOfBlock(editor.document, cursorLineIndex);
+	const lines = [];
+
+	for (let index = startLineIndex; index < editor.document.lineCount; index++) {
+		const line = editor.document.lineAt(index);
+		if(line.isEmptyOrWhitespace){ break; }
+		lines.push(line.text);
+	}
+
+	return lines.join('\n');
 };
 
 export function activate(context: vscode.ExtensionContext) {
