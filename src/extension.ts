@@ -34,7 +34,7 @@ const getBlockToRun = (editor: vscode.TextEditor) => {
 };
 
 export function activate(context: vscode.ExtensionContext) {
-	let disposable = vscode.commands.registerCommand('vs-code-slime.helloWorld', () => {
+	let disposable = vscode.commands.registerCommand('vs-code-slime.pasteLineToTerminal', () => {
     const editor = vscode.window.activeTextEditor;
 		const terminal = vscode.window.activeTerminal;
 		if (!editor || !terminal) {

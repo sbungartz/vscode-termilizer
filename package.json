@@ -2,7 +2,7 @@
   "name": "vs-code-slime",
   "displayName": "VS Code Slime",
   "description": "Paste code into terminal",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -10,24 +10,24 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:vs-code-slime.helloWorld",
+    "onCommand:vs-code-slime.pasteLineToTerminal",
     "onCommand:vs-code-slime.pasteBlockToTerminal"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "vs-code-slime.helloWorld",
-        "title": "Hello Warld"
+        "command": "vs-code-slime.pasteLineToTerminal",
+        "title": "Slime: Paste line under cursor to active terminal"
       },
       {
         "command": "vs-code-slime.pasteBlockToTerminal",
-        "title": "Paste block under cursor to active terminal"
+        "title": "Slime: Paste block under cursor to active terminal"
       }
     ],
     "keybindings": [
       {
-        "command": "vs-code-slime.helloWorld",
+        "command": "vs-code-slime.pasteLineToTerminal",
         "key": "alt+shift+f7"
       }
     ]
