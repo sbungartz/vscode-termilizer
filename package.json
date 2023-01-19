@@ -1,14 +1,24 @@
 {
   "name": "termilizer",
   "displayName": "Termilizer",
-  "description": "Paste code into terminal",
+  "publisher": "sbungartz",
   "version": "0.0.3",
-  "engines": {
-    "vscode": "^1.74.0"
-  },
+  "description": "Paste code at the cursor position to terminal - perfect for trying out code in any REPL.",
   "categories": [
     "Other"
   ],
+  "keywords": ["paste", "terminal", "repl", "slime"],
+  "homepage": "https://github.com/sbungartz/vscode-termilizer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sbungartz/vscode-termilizer"
+  },
+  "bugs": {
+    "url": "https://github.com/sbungartz/vscode-termilizer/issues"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
@@ -19,12 +29,6 @@
       {
         "command": "termilizer.pasteBlockToTerminal",
         "title": "Termilizer: Paste block under cursor to active terminal"
-      }
-    ],
-    "keybindings": [
-      {
-        "command": "termilizer.pasteLineToTerminal",
-        "key": "alt+shift+f7"
       }
     ]
   },
