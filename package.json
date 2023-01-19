@@ -9,10 +9,6 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onCommand:termilizer.pasteLineToTerminal",
-    "onCommand:termilizer.pasteBlockToTerminal"
-  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
