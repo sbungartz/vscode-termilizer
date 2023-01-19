@@ -17,12 +17,12 @@
   "contributes": {
     "commands": [
       {
-        "command": "termilizer-code-slime.pasteLineToTerminal",
-        "title": "Slime: Paste line under cursor to active terminal"
+        "command": "termilizer.pasteLineToTerminal",
+        "title": "Termilizer: Paste line under cursor to active terminal"
       },
       {
         "command": "termilizer.pasteBlockToTerminal",
-        "title": "Slime: Paste block under cursor to active terminal"
+        "title": "Termilizer: Paste block under cursor to active terminal"
       }
     ],
     "keybindings": [
