@@ -34,7 +34,7 @@ const getBlockToRun = (editor: vscode.TextEditor) => {
 };
 
 export function activate(context: vscode.ExtensionContext) {
-	let disposable = vscode.commands.registerCommand('vs-code-slime.pasteLineToTerminal', () => {
+	let disposable = vscode.commands.registerCommand('termilizer.pasteLineToTerminal', () => {
     const editor = vscode.window.activeTextEditor;
 		const terminal = vscode.window.activeTerminal;
 		if (!editor || !terminal) {
@@ -48,7 +48,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(disposable);
 
-	let disposable2 = vscode.commands.registerCommand('vs-code-slime.pasteBlockToTerminal', () => {
+	let disposable2 = vscode.commands.registerCommand('termilizer.pasteBlockToTerminal', () => {
     const editor = vscode.window.activeTextEditor;
 		const terminal = vscode.window.activeTerminal;
 		if (!editor || !terminal) {
