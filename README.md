@@ -1,71 +1,32 @@
-# termilizer README
+# Termilizer VS Code extension
 
-This is the README for your extension "termilizer". After writing up a brief description, we recommend including the following sections.
+Paste the line or block of code under your cursor to the active terminal without ever changing focus.
+Perfect for trying out code in any REPL.
 
-## Features
+Inspired by the [vim-slime](https://github.com/jpalardy/vim-slime) plugin.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Commands
+The following commands are provided in the command pallete (press `Ctrl+Shift+P` or `CMD+Shift+P`).
+Currently, no default keyboard shortcuts are provided, but can be configured in the VS Code Settings.
+- Termilizer: Paste line under cursor to active terminal (`termilizer.pasteLineToTerminal`)
+  - When nothing is selected, the line under your cursor will be pasted to the active terminal
+  - When code is selected, only the selection will be pasted (multiple lines work as well)
+  - Even if only part of a line is selected, a new line will be pasted as well, causing the pasted code to be executed immediatley.
+- Termilizer: Paste block under cursor to active terminal (`termilizer.pasteBlockToTerminal`)
+  - The block of code surrounding your cursor will be pasted to the active terminal
+  - A "block of code" is only determined by empty lines. No language sematics are taken into account.
 
-For example if there is an image subfolder under your extension project workspace:
+### :alert: Caution
+Since we paste code into a terminal including at least one newline character, unforeseen things might happen.
+Always make sure that you *know* which *terminal is currently active* and which *line(s) have focus* before you run any of they provided commands.
 
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+Please also note that VS Code considers the last terminal that had focus, when the Panel with the terminal is hidden.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- "Paste block under cursor" only looks at where the cursor is and ignores selection.
+- When multiple cursors are placed, only the first one is taken into account.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+See [CHANGELOG.md](CHANGELOG.md).
