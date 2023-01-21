@@ -16,7 +16,7 @@ Currently, no default keyboard shortcuts are provided, but can be configured in 
   - The block of code surrounding your cursor will be pasted to the active terminal
   - A "block of code" is only determined by empty lines. No language sematics are taken into account.
 
-### :alert: Caution
+### :warning: Caution
 Since we paste code into a terminal including at least one newline character, unforeseen things might happen.
 Always make sure that you *know* which *terminal is currently active* and which *line(s) have focus* before you run any of they provided commands.
 
