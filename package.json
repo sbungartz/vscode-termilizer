@@ -2,7 +2,7 @@
   "name": "termilizer",
   "displayName": "Termilizer",
   "publisher": "sbungartz",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Paste code at the cursor position to terminal - perfect for trying out code in any REPL.",
   "categories": [
     "Other"
@@ -20,6 +20,7 @@
     "vscode": "^1.74.0"
   },
   "main": "./dist/extension.js",
+  "activationEvents": [],
   "contributes": {
     "commands": [
       {
