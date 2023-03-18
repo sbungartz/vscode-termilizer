@@ -48,7 +48,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(disposable);
 
-	let disposable2 = vscode.commands.registerCommand('termilizer.pasteBlockToTerminal', () => {
+	let desposable2 = vscode.commands.registerCommand('termilizer.pasteBlockToTerminal', () => {
     const editor = vscode.window.activeTextEditor;
 		const terminal = vscode.window.activeTerminal;
 		if (!editor || !terminal) {
