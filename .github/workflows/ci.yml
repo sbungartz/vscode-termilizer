@@ -16,5 +16,4 @@ jobs:
         cache: 'npm'
         cache-dependency-path: '**/package-lock.json'
     - run: npm ci
-    - run: /usr/bin/Xvfb :99 -screen 0 1024x768x24
-    - run: npm run test
+    - run: xvfb-run -a npm test
